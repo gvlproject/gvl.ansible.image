@@ -1,0 +1,3 @@
+galaxyprojectdotorg.galaxy-os
+smola.java
+galaxyprojectdotorg.cloudman-image
