@@ -1,9 +1,9 @@
 #!/bin/bash
-if [ -d "gvl_commandline_utilities" ]
+if [ -d "/opt/gvl/gvl_commandline_utilities" ]
 then
     printf "This will add a new user to the system. Press any key to continue."
     read -n 1 _input
-    cd gvl_commandline_utilities
+    cd /opt/gvl/gvl_commandline_utilities
     printf "Please enter the name for the user: "
     read username
     sh setup_user.sh $username
