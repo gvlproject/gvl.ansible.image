@@ -3,3 +3,18 @@
   apt: pkg={{ item }} state=latest
   with_items:
     - tophat
+
+- name: "Preinstall common packages (makes jupyterhub install faster)"
+  apt: name={{ item }}
+  with_items:
+    - npm
+    - nodejs-legacy
+    - python3-pip
+    - libfreetype6-dev # for matplotlib
+
+- name: "Preinstall common scientific packages (makes jupyterhub install faster)"
+  pip: name={{ item }} executable=pip3 state=latest
+  with_items:
+    - matplotlib
+    - scipy
+    - pandas
