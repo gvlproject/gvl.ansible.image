@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Name=Terminal
-Comment=Start a terminal
+Comment=Start LXTerminal for command-line access
 Exec=lxterminal
 Icon=utilities-terminal-symbolic
 Terminal=false

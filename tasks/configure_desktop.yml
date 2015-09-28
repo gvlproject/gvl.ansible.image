@@ -12,5 +12,4 @@
 - name: GVL Desktop - Copy desktop shortcuts
   copy: src=desktop/shortcuts/{{ item }} dest=/home/ubuntu/Desktop/{{ item }} mode=0755
   with_items:
-    - add_user.desktop
     - terminal.desktop
