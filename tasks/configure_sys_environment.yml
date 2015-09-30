@@ -1,0 +1,17 @@
+- name: GVL Utils - Configure the GVL init script to run as an upstart job
+  template: src=gvlinit.j2 dest=/etc/init/gvlinit.conf
+
+- name: GVL Utils - Copy gvl scripts
+  copy: src=scripts dest={{ gvl_install_path }} mode=0755 owner="ubuntu"
+
+- name: Enable pam-limits for daemon processes (so that ulimits take effect)
+  lineinfile: dest=/etc/pam.d/common-session line="session{{'\t'}}required{{'\t'}}pam_limits.so"
+
+- name: Set max number of open files for system users
+  lineinfile: dest=/etc/security/limits.conf line="{{ item }}"
+  with_items:
+    - "* hard nofile 16384"
+    - "* soft nofile 16384"
+    - "root hard nofile 300000"
+    - "root soft nofile 300000"
+  sudo_user: root

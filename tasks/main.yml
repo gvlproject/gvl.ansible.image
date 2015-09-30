@@ -4,7 +4,7 @@
 - include: install_gvldash.yml
   when: gvl_install_dash and not only_cleanup
 
-- include: install_cmdline_utils.yml
+- include: configure_sys_environment.yml
   when: not only_cleanup
 
 - include: configure_nginx.yml
