@@ -3,6 +3,8 @@
   apt: pkg={{ item }} state=latest
   with_items:
     - tophat
+    # https://trello.com/c/9jm6tVqU/381-add-tabix-to-the-image
+    - tabix
 
 - name: "Preinstall common packages (makes jupyterhub install faster)"
   apt: name={{ item }}
