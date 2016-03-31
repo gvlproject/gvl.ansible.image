@@ -22,8 +22,27 @@
     - matplotlib
     - scipy
     - pandas
+    
+- name: "Preinstall more common python scientific packages"
+  pip: name={{ item }} state=latest
+  with_items:
     # https://trello.com/c/7x9svF7x/382-bar-chart-tool-error
-    - gnuplot-py
+    - numpy
+    - http://prdownloads.sourceforge.net/gnuplot-py/gnuplot-py-1.8.tar.gz?download
     
 - name: Download the liftOver binary
   get_url: url=http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver dest=/usr/bin/liftOver mode=0775
+  
+#Install some extra perl modules for microbial tools
+- name: Install required perl modules
+  cpanm: name="{{ item }}" notest=yes
+  with_items:
+    - List::Util
+    - Moo
+    - Spreadsheet::Read
+    - YAML::Tiny
+    - https://github.com/chapmanb/vcftools-cpan/archive/v0.953.tar.gz
+
+- name: Upgrade List::Util
+  command: cpanm --upgrade List::Util
+
