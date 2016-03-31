@@ -19,3 +19,34 @@
 
 - name: Ensure pip version of ansible is installed
   pip: name=ansible state=latest
+  
+- name: install some system packages
+  apt: pkg="{{ item }}" state=latest
+  with_items:
+    - build-essential
+    - curl
+    - git
+    - m4
+    - ruby
+    - texinfo
+    - libbz2-dev
+    - libcurl4-openssl-dev
+    - libexpat-dev
+    - libncurses-dev
+    - zlib1g-dev
+    - cpanminus
+    - pandoc
+    - oracle-java8-installer
+
+#Install some extra perl modules for microbial tools
+- name: Install required perl modules
+  cpanm: name="{{ item }}" notest=yes
+  with_items:
+    - List::Util
+    - Moo
+    - Spreadsheet::Read
+    - YAML::Tiny
+    - https://github.com/chapmanb/vcftools-cpan/archive/v0.953.tar.gz
+
+- name: Upgrade List::Util
+  command: cpanm --upgrade List::Util
