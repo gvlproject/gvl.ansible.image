@@ -1,6 +1,15 @@
 - name: Install ppa for latest git
   apt_repository: repo='ppa:git-core/ppa' state=present
 
+- name: Apt autoremove unused dependencies
+  apt: autoremove=yes
+
+- name: Clean apt cache to recover some disk space
+  shell: apt-get clean
+  
+- name: Update apt packages
+  apt: update_cache=yes
+
 - name: Update apt packages
   apt: update_cache=yes
 
@@ -37,7 +46,6 @@
     - zlib1g-dev
     - cpanminus
     - pandoc
-    - oracle-java8-installer
 
 #Install some extra perl modules for microbial tools
 - name: Install required perl modules
