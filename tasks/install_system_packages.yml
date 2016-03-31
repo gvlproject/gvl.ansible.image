@@ -23,6 +23,7 @@
 - name: install some system packages
   apt: pkg="{{ item }}" state=latest
   with_items:
+    - xauth
     - build-essential
     - curl
     - git
