@@ -42,6 +42,8 @@
     - Spreadsheet::Read
     - YAML::Tiny
     - https://github.com/chapmanb/vcftools-cpan/archive/v0.953.tar.gz
+    # https://overv.io/gvlproject/gvl.ansible.playbook/issues/38/
+    - GD::Graph::bars
 
 - name: Upgrade List::Util
   command: cpanm --upgrade List::Util
