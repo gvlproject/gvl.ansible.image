@@ -56,10 +56,7 @@ below).
 The following variables can be set to either `yes` or `no` to indicate if the
 given part of the role should be executed:
  - `cm_install_packages`: (default: `yes`) install system level packages
- - `cm_venvburrito`: (default: `yes`) whether to setup virtual burrito virtual
-    environment for CloudMan
  - `cm_system_environment`: (default: `yes`) setup system-level configurations
-    *Note* that setting this option also requires `cm_venvburrito` to be set.
  - `cm_system_tools`: (default: `yes`) install given tools system wide
  - `cm_install_s3fs`: (default: `yes`) whether to install S3FS or not
  - `cm_configure_nginx`: (default: `yes`) whether to configure Nginx
@@ -87,7 +84,7 @@ Next, set any variables as desired and place the role into a playbook file
 `roles/galaxyprojectdotorg.cloudman-image` directory:
 
     - hosts: image-builder
-      sudo: yes
+      become: yes
       roles:
         - galaxyprojectdotorg.cloudman-image
           vnc_password: <some_password>

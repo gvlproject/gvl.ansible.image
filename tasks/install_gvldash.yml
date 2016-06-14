@@ -14,21 +14,21 @@
 
 - name: GVLDash - Checkout application source
   git: repo={{ gvl_dash_repository }} dest={{ gvl_dash_path }} accept_hostkey=yes
-  sudo: true
-  sudo_user: "{{ gvl_dash_webuser }}"
+  become: true
+  become_user: "{{ gvl_dash_webuser }}"
 
 - name: GVLDash - Install requirements
   pip: requirements={{ gvl_dash_path }}/requirements.txt virtualenv={{ gvl_dash_path }}/.venv state=latest
-  sudo: true
-  sudo_user: "{{ gvl_dash_webuser }}"
+  become: true
+  become_user: "{{ gvl_dash_webuser }}"
   tags:
     - install
     - deploy
 
 - name: GVLDash - Django collectstatic
   django_manage: command=collectstatic app_path={{ gvl_dash_path }}/gvldash virtualenv={{ gvl_dash_path }}/.venv
-  sudo: true
-  sudo_user: "{{ gvl_dash_webuser }}"
+  become: true
+  become_user: "{{ gvl_dash_webuser }}"
   tags:
     - install
     - deploy
