@@ -23,6 +23,8 @@
     - git
     - screen
     - environment-modules
+    # Make sure en_AU.UTF-8 and other en locales are installed 
+    - language-pack-en
 
 - name: Ensure apt version of ansible is uninstalled
   apt: pkg=ansible state=absent
