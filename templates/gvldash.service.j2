@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Environment=DJANGO_CONFIGURATION=Production
-WorkingDirectory{{ gvl_dash_path }}/gvldash
+WorkingDirectory={{ gvl_dash_path }}/gvldash
 ExecStart={{ gvl_dash_path }}/.venv/bin/gunicorn -w 2 wsgi:application
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
