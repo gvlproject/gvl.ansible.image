@@ -1,0 +1,10 @@
+[Unit]
+Description=GVL Init
+After=network.target
+
+[Service]
+Environment=DJANGO_CONFIGURATION=Production
+ExecStart=/bin/sh run-parts {{ gvl_script_path }}/start.d/
+
+[Install]
+RequiredBy=gvldash
