@@ -1,5 +1,8 @@
-- name: GVL Utils - Configure the GVL init script to run as an upstart job
+- name: GVL Utils - Copy GVL systemd init script
   template: src=gvlinit.service.j2 dest=/etc/systemd/system/gvlinit.service
+
+- name: GVL Utils - Configure the GVL init script to run as a systemd service
+  systemd: name=gvlinit daemon_reload=yes enabled=yes
 
 - name: GVL Utils - Copy gvl scripts
   copy: src=scripts dest={{ gvl_install_path }} mode=0755 owner="ubuntu"

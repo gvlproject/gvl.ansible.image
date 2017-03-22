@@ -53,7 +53,7 @@
   template: src=version_info.j2 dest={{ gvl_install_path }}/info/image.yml
 
 - name: Start GVLDashboard
-  systemd: state=started name=gvldash daemon_reload=yes
+  systemd: state=started name=gvldash daemon_reload=yes enabled=yes
 
 - name: GVLDash - Make sure the service starts up correctly
   wait_for: port=8000 delay=5 state=started timeout=150
