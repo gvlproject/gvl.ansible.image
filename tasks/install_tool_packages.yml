@@ -28,7 +28,7 @@
   with_items:
     # https://trello.com/c/7x9svF7x/382-bar-chart-tool-error
     - numpy
-    - http://prdownloads.sourceforge.net/gnuplot-py/gnuplot-py-1.8.tar.gz?download
+#    - http://prdownloads.sourceforge.net/gnuplot-py/gnuplot-py-1.8.tar.gz?download
     
 - name: Download the liftOver binary
   get_url: url=http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/liftOver dest=/usr/bin/liftOver mode=0775
