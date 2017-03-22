@@ -3,6 +3,7 @@ Description=GVL Init
 After=network.target
 
 [Service]
+Type=oneshot
 Environment=DJANGO_CONFIGURATION=Production
 ExecStart=/bin/sh -c "run-parts {{ gvl_script_path }}/start.d/"
 
