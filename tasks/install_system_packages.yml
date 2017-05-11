@@ -32,6 +32,12 @@
 - name: Ensure pip version of ansible is installed
   pip: name=ansible state=latest
   
+- name: edit ansible.cfg to set a sensible remote_tmp
+  lineinfile:
+    path: /etc/ansible/ansible.cfg
+    regexp: '^#remote_tmp'
+    line: 'remote_tmp = /mnt/galaxy/tmp'
+  
 - name: install some system packages
   apt: pkg="{{ item }}" state=latest
   with_items:
