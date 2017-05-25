@@ -1,6 +1,9 @@
 - name: Install ppa for latest git
   apt_repository: repo='ppa:git-core/ppa' state=present
 
+- name: Install ppa for java 7
+  apt_repository: repo='ppa:openjdk-r/ppa' state=present
+
 - name: Apt autoremove unused dependencies
   # apt: autoremove=yes - won't be supported till ansible 2.1
   shell: apt-get autoremove -y
