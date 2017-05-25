@@ -7,6 +7,8 @@
     - tabix
     # https://trello.com/c/7x9svF7x/382-bar-chart-tool-error
     - gnuplot
+    # GATK 1.4 and 2.8 needs Java 7
+    - openjdk-7-jdk
 
 - name: "Preinstall common packages (makes jupyterhub install faster)"
   apt: name={{ item }}
