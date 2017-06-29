@@ -1,8 +1,8 @@
 - src: https://github.com/galaxyproject/ansible-galaxy-os.git
-  name: galaxyprojectdotorg.galaxy-os
+  name: galaxyproject.galaxy-os
 
 - src: smola.java
   name: smola.java
 
 - src: https://github.com/galaxyproject/ansible-cloudman-image.git
-  name: galaxyprojectdotorg.cloudman-image
+  name: galaxyproject.cloudman-image
