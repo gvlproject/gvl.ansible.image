@@ -20,6 +20,9 @@
 - name: Install latest apt packages
   apt: upgrade=dist
 
+- name: Install latest pyopenssl to keep pip happy
+  pip: name=pyopenssl state=latest
+
 - name: Install required system packages
   apt: pkg={{ item }} state=latest
   with_items:
