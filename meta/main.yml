@@ -14,4 +14,7 @@ galaxy_info:
   - cloud
   - genomics
 dependencies:
-  - { role: galaxyproject.cloudman-image, cm_install_novnc: yes }
+  - { role: galaxyproject.cloudman-image,
+            cm_install_novnc: yes,
+            cleanup: no
+    }

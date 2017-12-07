@@ -15,3 +15,5 @@
 
 - include: install_tool_packages.yml
   when: gvl_install_dash and not only_cleanup
+
+- include: ../../galaxyproject.cloudman-image/tasks/cleanup.yml

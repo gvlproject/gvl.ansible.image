@@ -5,7 +5,7 @@
 
 # Controls which tasks are included, in case you want to execute/update
 # only certain parts of the role.
-cleanup: no
+gvl_cleanup: yes
 # If only_cleanup is set, only the cleanup tasks will run and no other.
 # This is intended to be set as a command line variable.
 only_cleanup: no
