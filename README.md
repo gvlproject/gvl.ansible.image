@@ -1,5 +1,11 @@
 This Ansible role is for building the machine image required to run the GVL.
-It is likely to be used in the context of the GVL playbook.
+It is likely to be used in the context of the larger GVL playbook. Visit the
+[GVL Playbook repository]( https://github.com/gvlproject/gvl.ansible.playbook)
+for overall build instructions for the GVL.
+
+If you do not plan to make any customisations of the GVL build, and you are
+using an OpenStack based cloud, you do not need to build the image yourself
+and can download a publicly available image instead. See the [GVL Playbook repo]( https://github.com/gvlproject/gvl.ansible.playbook) for a list of pre-built images.
 
 Requirements
 ------------
