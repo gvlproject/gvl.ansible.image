@@ -21,7 +21,7 @@ gvl_dash_path: "{{ gvl_install_path }}/gvldash"
 gvl_dash_repository: https://github.com/gvlproject/gvldash
 gvl_dash_webuser: gvlwebuser
 
-gvl_version: "4.3.0"
+gvl_version: "4.4.0"
 gvl_build_date: "{{ ansible_date_time.iso8601 }}"
 
 # For cleanup scripts
